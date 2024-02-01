@@ -9,7 +9,7 @@ const forecast = require('./utils/forecast')
 // app is the kind of root for the web application and we call a function express(). we set all the necessary
 // things to the app
 const app = express()
-
+const port = process.env.PORT || 3000
 // Define paths for express
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -127,6 +127,6 @@ app.get('*', (req, res) => {
         footer:'Created By Sai'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port '+port)
 })
